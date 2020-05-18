@@ -1,0 +1,72 @@
+@import '../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+ 
+  
+  ngx-echarts-pie,
+  ngx-echarts-bar,
+  ngx-echarts-line,
+  ngx-echarts-multiple-xaxis,
+  ngx-echarts-area-stack,
+  ngx-echarts-bar-animation,
+  ngx-echarts-radar {
+    display: block;
+    height: nb-theme(card-height-medium);
+    width: 100%;
+  }
+
+  .visited-date,
+  .visited-pages-count,
+  .visited-percentages {
+    flex: 1 0 auto;
+    margin: 0 0.25rem;
+  }
+
+  .value {
+    margin-top: 0.25rem;
+    color: nb-theme(color-success-default);
+  }
+
+  .delta {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &.down {
+      color: nb-theme(color-danger-default);
+    }
+
+    &.up {
+      color: nb-theme(color-success-default);
+    }
+
+    nb-icon ::ng-deep svg {
+      vertical-align: top;
+    }
+  }
+  ::ng-deep .echart {
+    height: 100%;
+    width: 100%;
+  }
+  @include media-breakpoint-down(sm) {
+    ngx-traffic {
+      display: none;
+    }
+  }
+}
+
+
+.title-div{
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+}
+
+.carousal{
+  position: relative;
+  padding-bottom: 10px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
